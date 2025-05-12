@@ -12,9 +12,6 @@
   background-color: $usa-blue;
   width: 2px;
   height: 25px;
-  position: absolute;
-  top: 353px;
-  left: 107px;
   border-radius: 5px;
   border-width: 1px;
 }
