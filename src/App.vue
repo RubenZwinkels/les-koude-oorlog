@@ -1,30 +1,33 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+	<h1>De Koude oorlog</h1>
+	<h2>De berlijnse muur</h2>
+	<p>De val van de berlijnse muur</p>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+// colors
+$primary-color: #730D12;
+$secondary-color: #0A305C; 
+$bg-color: #ABABA1;
+$black-color: #171B26;
+
+// fonts
+h1, h2 {
+  font-family: "Russo One", sans-serif;
+  color: $black-color;
 }
 
-nav {
-  padding: 30px;
+h1 {
+  font-size: 42px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+h2 {
+  font-size: 26px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
 }
 </style>
