@@ -4,7 +4,11 @@
     <div id="line-wrapper">
       <div id="lines" v-for="year in years" :key="year">
         <lineCurrent v-if="year == currentyear" :year="year" />
-        <lineBig v-else-if="props.highlightyears?.includes(year)" :year="year" />
+        <lineBig
+          v-else-if="props.highlightyears?.includes(year)"
+          :year="year"
+          @click="changeCurrentYear(year)"
+        />
         <line-small v-else />
       </div>
     </div>
@@ -12,10 +16,17 @@
 </template>
 
 <script setup lang="ts">
+import {defineEmits} from "vue";
+
 import lineBig from "@/components/timeline/lines/line-big.vue";
 import lineSmall from "@/components/timeline/lines/line-small.vue";
 import lineCurrent from "@/components/timeline/lines/line-current.vue";
 import { defineProps } from "vue";
+
+const emit = defineEmits<{
+  (e: 'eCurrentYear', id: number): void
+}>();
+
 const props = defineProps<{
   startyear: {
     type: number;
@@ -40,6 +51,9 @@ const years = Array.from(
   (_, i) => props.startyear + i
 );
 
+function changeCurrentYear(toYear: number): void {
+	emit('eCurrentYear', toYear);
+}
 </script>
 
 <style scoped lang="scss">
