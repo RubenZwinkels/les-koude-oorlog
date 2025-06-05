@@ -16,7 +16,7 @@
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import lineBig from "@/components/timeline/lines/line-big.vue";
 import lineSmall from "@/components/timeline/lines/line-small.vue";
 import lineCurrent from "@/components/timeline/lines/line-current.vue";
